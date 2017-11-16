@@ -1,0 +1,2 @@
+# miniProjek
+Pembuatan mini OnlineShop
