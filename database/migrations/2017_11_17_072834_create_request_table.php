@@ -15,16 +15,10 @@ class CreateRequestTable extends Migration
     {
         Schema::create('request', function (Blueprint $table) {
             $table->increments('id_request');
-            $table->foreign('id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
-                  ->onUpdate('cascade');
+            $table->integer('id')->unsigned();
             $table->text('message');
             $table->enum('type', ['kritik','saran']);
-            $table->foreign('id_status')
-                  ->references('id_status')->on('status')
-                  ->onDelete('cascade');
-                  ->onUpdate('cascade');
+            $table->integer('id_status')->unsigned();
             $table->timestamps();
         });
     }
